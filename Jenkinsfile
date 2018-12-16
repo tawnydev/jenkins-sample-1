@@ -11,7 +11,7 @@ node () {
  	
 withEnv(["JAVA_HOME=${ tool '"+JDK+"' }", "PATH=${env.JAVA_HOME}/bin"]) { 
 		// Maven build step
-	withMaven(jdk: 'Java 8', maven: 'Maven 3.5.3') { 
+	withMaven(jdk: 'Java 8', maven: 'Maven 3.6.0') { 
  			if(isUnix()) {
  				sh "mvn clean install package " 
 			} else { 
