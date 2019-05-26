@@ -21,12 +21,12 @@ node () {
 		    withMaven(maven: 'Maven 3.6.0') { 
 	 			if(isUnix()) {
 	 				sh "mvn sonar:sonar \
-  						-Dsonar.projectKey=com.kevin.projetjavatest \
+  						-Dsonar.projectKey=fr.orsys.samples.fr.orsys.samples \
   						-Dsonar.host.url=http://localhost:9000 \
   						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4" 
 				} else { 
 	 				bat "mvn sonar:sonar \
-  						-Dsonar.projectKey=com.kevin.projetjavatest \
+  						-Dsonar.projectKey=fr.orsys.samples.fr.orsys.samples \
   						-Dsonar.host.url=http://localhost:9000 \
   						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4" 
 				} 
