@@ -17,6 +17,21 @@ node () {
 			} 
  		} 
 	}
+	stage ('Analyse de la qualité'){
+		    withMaven(maven: 'Maven 3.6.0') { 
+	 			if(isUnix()) {
+	 				sh "mvn sonar:sonar \
+  						-Dsonar.projectKey=com.kevin.projetjavatest \
+  						-Dsonar.host.url=http://localhost:9000 \
+  						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4" 
+				} else { 
+	 				bat "mvn sonar:sonar \
+  						-Dsonar.projectKey=com.kevin.projetjavatest \
+  						-Dsonar.host.url=http://localhost:9000 \
+  						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4" 
+				} 
+	 		} 		    
+		}
 	stage ('SampleProject - Post build actions') {
 /*
 Please note this is a direct conversion of post-build actions. 
