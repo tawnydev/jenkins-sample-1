@@ -8,9 +8,9 @@ timestamps {
 		stage ('jenkins-sample-1 - Build') {
 			withMaven(maven: 'Maven 3.6.0') { 
 	 			if(isUnix()) {
-	 				sh "mvn clean install package " 
+	 				sh "mvn clean install package"
 				} else { 
-	 				bat "mvn clean install package " 
+	 				bat (/mvn clean install package/)
 				} 
 	 		} 
 		}
@@ -22,10 +22,11 @@ timestamps {
 	  						-Dsonar.host.url=http://localhost:9000 \
 	  						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4" 
 					} else { 
-		 				bat "mvn sonar:sonar \
+		 				bat (/mvn sonar:sonar \
 	  						-Dsonar.projectKey=fr.orsys.samples.fr.orsys.samples \
 	  						-Dsonar.host.url=http://localhost:9000 \
-	  						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4" 
+	  						-Dsonar.login=f5e2cd355013d251cbe549e9aee323a7b3b77bf4
+	  						/)
 					} 
 		 		} 		    
 			}

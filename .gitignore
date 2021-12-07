@@ -5,6 +5,7 @@
 .settings
 .classpath
 /target
+./.idea
 
 # Compiled class file
 *.class
